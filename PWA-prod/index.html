@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>PWA</title>
+        <meta charset="utf-8">
+        <link rel="manifest" href="manifiesto.json">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+    </head>
+<body>
+	<input type="submit" id="btnCalcular">
+	<button type="submit" id="btnClean">Limpia</button>
+	<br />
+	<br />
+	<div id="res">
+	</div>
+	<div id="res2"></div>
+	<div id="res3"></div>
+	<canvas id="canvas" width="800" height="400">
+	</canvas>
+	<br />
+	<script src="funcion.js"></script>
+	<br />
+	a: <input type="text" id="txta">
+	<br />
+	b: <input type="text" id="txtb">
+	<br />
+	c: <input type="text" id="txtc">
+	<br />
+	<br />
+	d: <input type="text" id="txtd">
+	<br />
+	e: <input type="text" id="txte">
+	<br />
+	f: <input type="text" id="txtf">
+	<br />
+	<br />
+	<br />
+	x1: <input type="text" id="txtx1">
+	<br />
+	x2: <input type="text" id="txtx2">
+	<br />
+	x3: <input type="text" id="txtx3">
+	<br />
+	x4: <input type="text" id="txtx4">
+	<br />
+	<br />
+
+	<script>
+		if('serviceWorker' in navigator){
+			navigator.serviceWorker.register('sw.js')
+			.then(
+				function(registration){
+					alert('Reg. satisfactorio del sw');
+					console.log('Reg. satisfactorio del sw en el ámbito: ',
+								registration.scope);
+				}
+			).catch(
+				function(err){
+					alert('El SW no se registró');
+					console.log('El SW no se registró', err);
+				}
+			);
+		}
+	</script>
+
+</body>
+
+</html>
